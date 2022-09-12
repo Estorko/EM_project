@@ -6,13 +6,45 @@ html {
   -o-tab-size: 4;
   tab-size: 4;
 }
+.flex-container {
+    display: flex;
+    background-color: var(--theme-background);
+  }
+  .flex-container > div {
+    background:var(--theme-background-flex);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+html,
+html .invert .invert,
+html.light .invert {
+    --theme-color: #a8b3cf;
+    --theme-background: #0e1217;
+    --theme-background-flex: #506c8d87;
+}
 header{
     margin: 30px;;
-    color: rgb(223, 201, 201);
+    color: var(--theme-color);
 }
 body {
   line-height: inherit;
   margin: 0;
-  background-color: #0e1217;
+  background-color: var(--theme-background);
 }
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme-color);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:active,
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-color);
+  }
 
