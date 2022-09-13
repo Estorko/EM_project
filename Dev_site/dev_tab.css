@@ -6,25 +6,89 @@ html {
   -o-tab-size: 4;
   tab-size: 4;
 }
+/* .Home-bar{
+  border: inherit;
+} */
+.holder{
+  display: flex;
+}
 .flex-container {
-    display: flex;
+    position: relative;
+    margin-left: 200px;
+    padding-top: 150px;
+    padding-left: 10%;
+    padding-right:10%;
+    border: solid;
+    border-bottom: none;
+    border-color: var(--theme-color);
+    border-width:var(--border-width); 
     background-color: var(--theme-background);
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px 30px;
   }
-  .flex-container > div {
+  .flex-container >div {
     background:var(--theme-background-flex);
-    margin: 10px;
+    border: solid;
+    border-color: var(--theme-color);
+    border-radius: 25px;
+    border-width:var(--border-width); 
+    margin: 30px auto;
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
+    flex-wrap: wrap;
+    flex: 1 0 21%;
+    margin: 5px;
+    height: 100px;
+    display: flex;
+    /* flex: inherit */
+  }
+  .flex-container>div>a{
+    margin: auto;
+    padding: 5px;
+    color: var(--theme-color);
+    text-decoration: none;
+    background-color: white;
+    border: inherit;
+    border-radius: 25px;
+  }
+  .sidebar {
+    /* margin: auto; */
+    border: solid;
+    border-color: var(--theme-color);
+    border-width: var(--border-width);
+    padding: 0;
+    width: 200px;
+    background-color: var(--theme-background);
+    position: absolute;
+    height: 100%;
+    float: left;
+    overflow: auto;
+  }
+  .sidebar a {
+    display: block;
+    color: var(--theme-color);
+    padding: 8px;
+    text-decoration: none;
+  }
+  .sidebar a.active {
+    background-color: var(--theme-color);
+    color: var(--theme-background);
+  }
+  .sidebar a:hover:not(.active) {
+    background-color:var(--theme-color);
+    color: var(--theme-background);
   }
 html,
 html .invert .invert,
 html.light .invert {
     --theme-color: #a8b3cf;
     --theme-background: #0e1217;
-    --theme-background-flex: #506c8d87;
+    --theme-background-flex: #3d536c4d;
+    --border-width: 0.5px;
 }
 header{
-    margin: 30px;;
+    margin: 20px;;
     color: var(--theme-color);
 }
 body {
