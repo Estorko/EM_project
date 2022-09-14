@@ -15,6 +15,9 @@
     </header>
         <main class="flex-row">
             <main class="flex-container" id="flex_1">
+                <button class="openbtn" onclick="openNav()" title="Open Sidebar">></button>
+                <button class="button-85" onclick="topFunction()" id="myBtn" title="Go to top">
+                <img src="https://cdn.icon-icons.com/icons2/2348/PNG/512/chevron_up_icon_143107.png" class="invert"></button>
                 <div class="flex-col">
                     <header class="flex-header"> <h3>Popular</h3></header>
                     <break></break>
@@ -65,7 +68,8 @@
                     </article> 
             </main>
         </main>
-            <div class="sidebar">
+            <div class="sidebar" id="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" title="Close Sidebar">×</a>
                 <header>
                     <p style="font-family: inherit;">Discover</p>
                 </header>
