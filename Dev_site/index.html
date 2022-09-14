@@ -3,50 +3,91 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="dev_tab.css">
-    <title>New Tab</title>
+    <link rel="icon" href="https://res.cloudinary.com/practicaldev/image/fetch/s--KCRN0Wuf--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/356/ceb8dc0f-a77b-4f89-84da-52216a4286e1.png">
+    <title>Popular posts on daily.dev</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="dev_script.js" defer></script>
 </head>
 <body>
-    <header class="Home-bar">
-       daily.dev
-    </header> 
-    <div class="holder">
-        <div class="flex-container">
-            <div><a href="https://www.freecodecamp.org/news/top-30-react-interview-questions-and-concepts/" target="_blank">Read Article</a>
-            <br></br> test
-        </div>
-            <div><a href="https://www.patterns.dev/" target="_blank">Read Article</a> </div>
-            <div><a href="https://www.cockroachlabs.com/blog/sql-performance-best-practices/" target="_blank">Read Article</a> </div>
-            <div><a href="https://dev.to/bytehide/visual-studio-codes-new-editor-sticky-scroll-feature-never-get-lost-in-the-code-again-1dob"
-                target="_blank">Read Article</a> </div>
-            <div><a href="https://github.com/total-typescript/beginners-typescript-tutorial" target="_blank">Read Article</a> </div>
-            <div><a href="https://www.pcgamer.com/mark-zuckerberg-spent-dollar10b-on-the-metaverse-and-all-he-got-was-this-stupid-selfie/"
-                target="_blank">Read Article</a> </div>
-            <div><a href="https://blog.openreplay.com/build-beautiful-ui-components-with-nextui" target="_blank">Read Article</a> </div>
-        </div>
-        <div class="sidebar">
-            <header>
-                <p style="font-family: inherit;">Discover</p>
-            </header>
-            <a href="#Popular">Popular</a>
-            <a href="#Most upvoted">Most upvoted</a>
-            <a href="#Best discussions">Best discussions</a>
-            <a href="#Search">Search</a>
-            <header>
-                <p style="font-family: inherit;">Contribute</p>
-            </header>
-            <a href="#Submit article">Submit article</a>
-            <header>
-                <p style="font-family: inherit;">Manage</p>
-            </header>
-            <a href="#Bookmarks">Bookmarks</a>
-            <a href="#Reading history">Reading history</a>
-            <a href="#Customize">Customize</a>
-            <br style="line-height: 15;"> </br>
-            <a href="#Docs">Docs</a>
-            <a href="#Changelog">Changelog</a>
-            <a href="#Feedback">Feedback</a>
-            <a href="#Invite people">Invite people</a>
-        </div>
-    </div>
+    <header class="Home-bar" id="home">
+       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUVFhj///+YmJkAAADn5+dyc3QODxKdnZ4KDA4xMjPHx8eVlZYfICIAAAVBQUKhoaJnZ2mLjIxvb3AvLzEaGx3R0dHt7e3Z2dk4ODoiIyWlpaa1traDg4RiYmOPj5BdXV56entISEk+Pj9ktnkaAAADxElEQVR4nO3c7XKiMBhAYSQIWqVatfZrt117/xe5ILSKJCEBY4Jzzo/902Hkmfe1zmpqFBERERERERERERERERERERERERERERERERERERERERGR81JxLPVx9U0Safy837+8z0Wvq+fvL/v9cxz1uvomicWk7sN+EKn4+Ll6ESpRPEx+S2yJqUhOVz+ESTwHWhMbwECJTaAl8QIYJPESaEVsAQMktoEWRAkwOKIMaEyUAgMjyoGGRAVwMvkTDlEFNCIqgdN4GgpRDTQgKoGbv1kWCFEH7CSqJyiyOA6DqAd2EDXATSEMgtgF1BI1wF0JDIHYDdQQNcB8Uwm9E02ASqIGGC1roG+iGVBB1AF/R+iZaAqUEnXAaHcC+iSaAyVELfB8hB6JNsAWUQtsjtAbUQXM1gZEPfBihJ6IKuBKiGknUQ88+0XqkagGFj/bdBA7gO0ReiDqgGriXpgAo92qDbw1UQ8sfi5f1E9hAozytWSGtyV2ARVTfDIDFlf7JnYDpURjoHeiCVCyqBZAz0QzYGuKVkCvRFPgBdES6JFoDmwsqjXQG9EGeDbFHkBPRDvgL7EX0AvRFlgvak+gB6LIbIHHKfYGqolf+bVtx9KtPbC4ydf+QDVxeU3Y6dHeewAL2/GffkAVMVvPrqVqPJj0JruAx3oDVcQnJ89E4QOoIC6cPBGlwjeDhxoELLZc9kx0s6V72V1uO4kDgcuFBOjmPIri1XDeQXQBjP852dJc8d6EnugEmB3cnAxT3atuUZ0AHf0qVb/ka6boBhi/XVHVSDxaEh0B5+5OLyqJ8kV1BXTyUlFnNUVHwK1LoBVxjBMsM17UsQKNpzjOFa0yIo53gmUGizpuoG6K9R2MeUWrlMTq3YWxT7BMQUyGvCdTFwZQRdyUhPGvaJWMmDgE3niCZRJiabgfoISYuAPefEWrLonFs/CeJljWJCb3B7wgTsV9rWjVGTFxBfQ4wbITcSoGAaNdmMATMRkIFE8Brmh9axVxMww4+5J+jOZ/gmVHYjIMGInPcIEVcT0MGC2lp/UCWNEqcUhehgHTb9mSBjLBMtX/F42PFKSPEmFAQBXR/MxEum0Lg1nRKhnR5lCICHuCZW2i1amX2eXJ5+CAbaLlsZ5d0Cta1STanluaPa7CnmCZeD190r+2/gwzP2Q/f662CHKCZTORVcaPPl/eMdtN46xosc4D/nYTIb4300PfL2DJZ6+Hw1yEOsC6NM8H3GFadL17ISIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJp/wEljzeChPXK9wAAAABJRU5ErkJggg==" alt="">
+        daily.dev
+    </header>
+        <main class="flex-row">
+            <main class="flex-container" id="flex_1">
+                <div class="flex-col">
+                    <header class="flex-header"> <h3>Popular</h3></header>
+                    <break></break>
+                    <article class="Card_post" id="Card_1">
+                        <a id="L1" href="https://www.freecodecamp.org/news/top-30-react-interview-questions-and-concepts/" 
+                        target="_blank" title="Top 30 React Interview Questions and Concepts">Read Article</a>
+                        <header>Top 30 React Interview Questions and Concepts</header>
+                    </article>
+                    <article class="Card_post" id="Card_2">
+                        <a id="L2" href="https://www.cockroachlabs.com/blog/sql-performance-best-practices/" 
+                        target="_blank" title="SQL Performance Best Practices">Read Article</a>
+                        <header>SQL Performance Best Practices</header>
+                    </article>
+                    <article class="Card_post" id="Card_3">
+                        <a id="L3" href="https://dev.to/bytehide/visual-studio-codes-new-editor-sticky-scroll-feature-never-get-lost-in-the-code-again-1dob" 
+                        target="_blank" title="Visual Studio Code's New Editor Sticky Scroll Feature - Never Get Lost In The Code Again!">Read Article</a>
+                        <header>Visual Studio Code's New Editor Sticky Scroll Feature - Never Get Lost In The Code Again!</header>
+                    </article>  
+                    <article class="Card_post" id="Card_4">
+                        <a id="L4" href="https://www.freecodecamp.org/news/top-30-react-interview-questions-and-concepts/" 
+                        target="_blank" title="Top 30 React Interview Questions and Concepts">Read Article</a>
+                        <header>Top 30 React Interview Questions and Concepts</header>
+                    </article>
+                    <article class="Card_post" id="Card_5">
+                    <a id="L5" href="https://www.freecodecamp.org/news/top-30-react-interview-questions-and-concepts/" 
+                    target="_blank" title="Mark Zuckerberg spent $10B on the metaverse and all he got was this stupid selfie">Read Article</a>
+                    <header>Mark Zuckerberg spent $10B on the metaverse and all he got was this stupid selfie</header>
+                    </article>
+                    <article class="Card_post" id="Card_6">
+                        <a id="L6" href="https://blog.openreplay.com/build-beautiful-ui-components-with-nextui" 
+                        target="_blank" title="Build beautiful UI components with NextUI">Read Article</a>
+                        <header>Build beautiful UI components with NextUI</header>
+                    </article>
+                    <article class="Card_post" id="Card_7">
+                        <a id="L7" href="https://semaphoreci.com/blog/dora-metrics" 
+                        target="_blank" title="Become an Elite Team With Dora Metrics">Read Article</a>
+                        <header>Become an Elite Team With Dora Metrics</header>
+                    </article>
+                    <article class="Card_post" id="Card_8">
+                        <a id="L8" href="https://towardsdatascience.com/serving-ml-models-with-apache-spark-3adc278f7a78" 
+                        target="_blank" title="Serving ML Models with Apache Spark">Read Article</a>
+                        <header>Serving ML Models with Apache Spark</header>
+                    </article> 
+                    <article class="Card_post" id="Card_9">
+                        <a id="L9" href="https://80.lv/articles/unity-announces-price-increase-for-unity-pro-unity-enterprise-uic/" 
+                        target="_blank" title="Unity Announces Price Increase for Unity Pro, Unity Enterprise & UIC">Read Article</a>
+                        <header>Unity Announces Price Increase for Unity Pro, Unity Enterprise & UIC</header>
+                    </article> 
+            </main>
+        </main>
+            <div class="sidebar">
+                <header>
+                    <p style="font-family: inherit;">Discover</p>
+                </header>
+                <a href="#Popular"> <button class="button-49" role="button">Popular</button></a>
+                <a href="#Most upvoted"><button class="button-49" role="button">Most upvoted</button></a>
+                <a href="#Best discussions"><button class="button-49" role="button">Best discussions</button></a>
+                <a href="#Search"><button class="button-49" role="button">Search</button></a>
+                <header>
+                    <p style="font-family: inherit;">Contribute</p>
+                </header>
+                <a href="#Submit article"><button class="button-49" role="button">Submit article</button></a>
+                <header>
+                    <p style="font-family: inherit;">Manage</p>
+                </header>
+                <a href="#Bookmarks"><button class="button-49" role="button">Bookmarks</button></a>
+                <a href="#Reading history"><button class="button-49" role="button">Reading history</button></a>
+                <a href="#Customize"><button class="button-49" role="button">Customize</button></a>
+                <br style="line-height: 15;"> </br>
+                <a href="#Docs"><button class="button-49" role="button">Docs</button></a>
+                <a href="#Changelog"><button class="button-49" role="button">Changelog</button></a>
+                <a href="#Feedback"><button class="button-49" role="button">Feedback</button></a>
+                <a href="#Invite people"><button class="button-49" role="button">Invite people</button></a>
+            </div>
 </body>
 </html>
