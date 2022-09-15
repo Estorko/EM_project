@@ -11,7 +11,8 @@ function addImage(Card,link)
     var img=document.createElement("img");
     img.src=link;
     img.style.height='300px';
-    img.style.width='500px';
+    img.style.width='400px';
+    img.style.borderRadius='16px'
     doc.appendChild(img);
 }
 function openNav() 
